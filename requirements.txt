@@ -1,1 +1,8 @@
 streamlit
+pandas
+pdf2image
+opencv-python-headless
+numpy
+openai
+pybase64
+pillow

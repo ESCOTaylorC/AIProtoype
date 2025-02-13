@@ -5,8 +5,10 @@
   "customizations": {
     "codespaces": {
       "openFiles": [
-        "README.md",
-        "streamlit_app.py"
+        "streamlit_app.py",
+        "narrative_processor.py",
+        "pid_processor.py",
+        "utilities.py"
       ]
     },
     "vscode": {
