@@ -2,9 +2,9 @@ from openai import OpenAI
 import openai
 import os
 
-secretapi = os.getenv('OPENAI_FREEAPI')
+secretapi1 = os.getenv('OPENAI_FREEAPI')
 
-openai.apikey = secretapi
+openai.apikey = secretapi1
 
 def process_control_narrative(narrative_text):
     """Process control narrative and generate pseudocode."""

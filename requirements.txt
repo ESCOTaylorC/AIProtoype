@@ -6,3 +6,4 @@ numpy
 openai
 pybase64
 pillow
+pyMuPDF
