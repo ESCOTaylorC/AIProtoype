@@ -26,8 +26,9 @@ def convert_pdf_to_image(pdf_path):
     """Convert PDF to image for processing."""
     try:
         # Convert PDF to image using pdf2image
-        pop_path = r"C:\Users\tcaton\Documents\Release-24.08.0-0\poppler-24.08.0\Library\bin"
-        images = convert_from_path(pdf_path, poppler_path = pop_path)
+        #pop_path = r"C:\Users\tcaton\Documents\Release-24.08.0-0\poppler-24.08.0\Library\bin"
+        #pop_path = 'Poppler/Release-24.08.0-0/bin'
+        images = convert_from_path(pdf_path, poppler_path = 'Poppler/Release-24.08.0-0/bin')
         if not images:
             raise Exception("No images extracted from PDF")
         return images[0]  # Return first page
