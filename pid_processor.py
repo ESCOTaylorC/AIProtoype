@@ -41,23 +41,21 @@ def preprocess_image(image):
         if isinstance(image, Image.Image):
             image = np.array(image)
 
-        print(f"Image after conversion to numpy array: {image.shape}")
+        #print(f"Image after conversion to numpy array: {image.shape}")
 
         # Convert to grayscale
         if len(image.shape) == 3:
             gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
         else:
             gray = image
-        print(f"Image after conversion to grayscale: {gray.shape}")
+        #print(f"Image after conversion to grayscale: {gray.shape}")
         
         # Apply adaptive threshold
-        try:
-            thresh = cv2.adaptiveThreshold(gray, 127, 255, cv2.THRESH_BINARY)
-        
-            print(f"Image after adaptive threshold: {thresh.shape}")
-        except Exception as e:
-            print(f"Error during adaptive threshold: {str(e)}")
-            return thresh
+        _, thresh = cv2.adaptiveThreshold(gray, 127, 255, cv2.THRESH_BINARY)
+        return thresh
+        #print(f"Image after adaptive threshold: {thresh.shape}")
+    except Exception as e:
+            print(f"Error preprocessing image: {str(e)}")
      
 
 def image_to_base64(image):
