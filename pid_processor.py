@@ -26,6 +26,7 @@ def convert_pdf_to_image(pdf_path):
     """Convert PDF to image for processing."""
     try:
         # Convert PDF to image using pdf2image
+        #poppler_path = 
         images = convert_from_path(pdf_path)
         if not images:
             raise Exception("No images extracted from PDF")
