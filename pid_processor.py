@@ -15,9 +15,9 @@ import json
 secretapi = os.getenv('OPENAI_FREEAPI')
 
 if secretapi:
-    print("Secret retrieved successfully!")
+    print("PID Secret retrieved successfully!")
 else:
-    print("Failed to retrieve the secret.")
+    print("Failed to retrieve PID secret.")
 
 openai.api_key = secretapi
 
@@ -26,7 +26,7 @@ def convert_pdf_to_image(pdf_path):
     """Convert PDF to image for processing."""
     try:
         # Convert PDF to image using pdf2image
-        pop_path = r"/workspaces/AIProtoype/Poppler/Release-24.08.0-0/poppler-24.08.0/Library/bin"
+        pop_path = r"C:\Users\tcaton\Documents\Release-24.08.0-0\poppler-24.08.0\Library\bin"
         images = convert_from_path(pdf_path, poppler_path = pop_path)
         if not images:
             raise Exception("No images extracted from PDF")
