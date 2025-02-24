@@ -26,8 +26,8 @@ def convert_pdf_to_image(pdf_path):
     """Convert PDF to image for processing."""
     try:
         # Convert PDF to image using pdf2image
-        #poppler_path = 
-        images = convert_from_path(pdf_path)
+        pop_path = r"/workspaces/AIProtoype/Poppler/Release-24.08.0-0/poppler-24.08.0/Library/bin"
+        images = convert_from_path(pdf_path, poppler_path = pop_path)
         if not images:
             raise Exception("No images extracted from PDF")
         return images[0]  # Return first page
@@ -78,7 +78,7 @@ def analyze_image_with_ai(image):
     try:
         base64_image = image_to_base64(image)
         #print first 100 characters of base64 string
-        print(f"Base64 image: {base64_image[:100]}...")
+        #print(f"Base64 image: {base64_image[:100]}...")
 
         response = openai.chat.completions.create(
             model="gpt-4o-mini",  # Updated to use the free tier model
